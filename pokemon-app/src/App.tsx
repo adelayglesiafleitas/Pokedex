@@ -7,19 +7,18 @@ import { Footer } from './components/Footer.tsx';
 
 function App() {
   return (
-
-    <div className='App'>
-      <Header />
-      {/*
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/pokemon/:id" element={<PokemonDetail />} />
-        </Routes>
-      </BrowserRouter>
-      */}
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <div className='App'>
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/pokemon/:id" element={<PokemonDetail />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 

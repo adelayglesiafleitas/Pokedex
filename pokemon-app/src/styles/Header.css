@@ -8,3 +8,11 @@
   justify-content: center;
   align-items: center;
 }
+
+.header h1 {
+  font-family: "PokemonSolid", sans-serif;
+  font-size: 3em;
+  color: var(--amarillo); /* color Pokémon */
+  text-shadow: 2px 2px var(--azul); /* borde azul tipo logo */
+  letter-spacing: 4px;
+}

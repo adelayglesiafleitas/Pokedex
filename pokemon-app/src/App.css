@@ -10,6 +10,11 @@
   --azul: #003f5f;
   --negro: #001b49;
 }
+@font-face {
+  font-family: "PokemonSolid";
+  src: url("../public//pokemon-solid-font/PokemonSolidNormal-xyWR.ttf")
+    format("truetype");
+}
 
 /* Asegúrate que el body o el contenedor principal tome toda la altura */
 body,
@@ -20,17 +25,19 @@ html {
 /* Contenedor padre para centrar */
 body {
   display: flex;
-  justify-content: center; /* centra horizontal */
-  align-items: center; /* centra vertical */
-  background-color: #f8f8f8; /* opcional, para que no quede blanco */
+  justify-content: center;
+
+  background-color: #f8f8f8;
 }
 .App {
-  /* width: 100%;*/
+  margin-top: 25px;
   max-width: 330px;
   width: 420px;
-  background: white;
+  background: var(--blanco);
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px var(--negro);
+  border-radius: 20px;
+  border: 1px solid var(--azul); /* 2px de grosor, línea sólida y color negro */
 }
 
 /* Para pantallas más grandes */
