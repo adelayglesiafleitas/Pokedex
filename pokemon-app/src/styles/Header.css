@@ -1,0 +1,10 @@
+.header {
+  height: 140px;
+  background-color: var(--rojo);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
