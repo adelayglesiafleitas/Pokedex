@@ -10,7 +10,7 @@ function App() {
     <BrowserRouter>
       <div className='App'>
         <Header />
-        <main>
+        <main className='main-content'>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/pokemon/:id" element={<PokemonDetail />} />
