@@ -15,7 +15,7 @@ function HomePage() {
   
 
   useEffect(() => {
-    fetch('https://pokeapi.co/api/v2/pokemon?limit=10')
+    fetch('https://pokeapi.co/api/v2/pokemon?limit=4')
       .then((res) => res.json())
       .then((data) => {
         setPokemonList(data.results);

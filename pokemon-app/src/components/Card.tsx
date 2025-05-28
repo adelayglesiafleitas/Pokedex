@@ -8,16 +8,18 @@ export const Card: React.FC<CardProps> = ({ pokemon, index }) => {
     return (
         <div className='card' >
             <div className='card-image'>
+
                 <img
                     src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`}
                     alt={pokemon.name}
-                /></div>
+                />
+            </div>
 
-            <div>
+            <div className='card-content'>
                 <h3>{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h3>
             </div>
 
-            <p>#{String(index + 1).padStart(3, '0')}</p>
+
         </div>
     )
 }
