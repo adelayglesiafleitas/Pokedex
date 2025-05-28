@@ -1,5 +1,5 @@
 .header {
-  height: 140px;
+  height: 95px;
   background-color: var(--rojo);
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -7,4 +7,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: 1px;
+  border-bottom: 1px solid var(--negro);
+}
+
+.header h1 {
+  font-family: "PokemonSolid", sans-serif;
+  font-size: 3em;
+  color: var(--amarillo); /* color Pokémon */
+  text-shadow: 2px 2px var(--azul); /* borde azul tipo logo */
+  letter-spacing: 4px;
 }

@@ -1,42 +1,52 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-
-type PokemonBasic = {
-  name: string;
-  url: string;
-};
+import "../styles/HomePage.css";
+import { Card } from '../components/Card';
+import type { PokemonBasic } from "../types/types";
 
 function HomePage() {
   const [pokemonList, setPokemonList] = useState<PokemonBasic[]>([]);
+  const [searchTerm, setSearchTerm] = useState('');
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://pokeapi.co/api/v2/pokemon?limit=20')
-      .then((res) => res.json())
-      .then((data) => {
+    fetch('https://pokeapi.co/api/v2/pokemon?limit=1302')
+      .then(res => res.json())
+      .then(data => {
         setPokemonList(data.results);
         setLoading(false);
       });
   }, []);
 
+  const displayedPokemon = pokemonList.filter(pokemon =>
+    pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   if (loading) return <p>Loading...</p>;
 
   return (
-    <div style={{ padding: '1rem' }}>
-      <h1>Pokédex</h1>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))', gap: '1rem' }}>
-        {pokemonList.map((pokemon, index) => (
-          <Link to={`/pokemon/${index + 1}`} key={pokemon.name}>
-            <div style={{ border: '1px solid #ccc', padding: '1rem', borderRadius: '8px', textAlign: 'center' }}>
-              <img
-                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`}
-                alt={pokemon.name}
-              />
-              <h3>{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h3>
-              <p>#{String(index + 1).padStart(3, '0')}</p>
-            </div>
-          </Link>
-        ))}
+    <div className='home'>
+      <input
+        type="text"
+        placeholder="Buscar Pokémon..."
+        value={searchTerm}
+        onChange={e => setSearchTerm(e.target.value)}
+        className="search-input"
+      />
+
+      {displayedPokemon.length === 0 && (
+        <p>No se encontró ningún Pokémon</p>
+      )}
+
+      <div className='pokemon-list'>
+        {displayedPokemon.map(pokemon => {
+          const index = pokemonList.findIndex(p => p.name === pokemon.name);
+          return (
+            <Link to={`/pokemon/${index + 1}`} key={pokemon.name}>
+              <Card pokemon={pokemon} index={index} />
+            </Link>
+          );
+        })}
       </div>
     </div>
   );

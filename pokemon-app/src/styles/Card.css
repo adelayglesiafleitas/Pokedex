@@ -1,0 +1,45 @@
+.card {
+  width: 140px;
+  height: 170px;
+  border: 7px solid var(--amarillo);
+  /* border: 1px solid var(--negro);*/
+  border-radius: 5px;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 0 5px var(--azul);
+}
+.card-image {
+  width: 136px;
+  height: 141px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* border: 7px solid var(--negro);*/
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--azul);
+  box-shadow: 0 0 5px var(--negro);
+}
+
+.card-image img {
+  width: 150px;
+}
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3px;
+}
+.card-content h3 {
+  
+  font-size: 1.1rem;
+  color: var(--negro); /* color Pokémon */
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-decoration: none; /* Quita el subrayado */
+}

@@ -1,0 +1,13 @@
+.footer {
+  height: 80px;
+  background-color: var(--rojo);
+
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px;
+  border-bottom: 1px solid var(--negro);
+}
